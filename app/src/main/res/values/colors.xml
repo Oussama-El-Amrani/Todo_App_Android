@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#000000</color>
     <color name="disable_button">#A4FFFFFF</color>
+    <color name="danger">#DB3545</color>
+    <color name="success">#28A645</color>
+    <color name="important">#007BFE</color>
+    <color name="warning">#FEC007</color>
+    <color name="information">#17A1B7</color>
+    <color name="background_color">#6DDBEB</color>
 </resources>

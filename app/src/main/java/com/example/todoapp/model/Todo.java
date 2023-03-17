@@ -1,7 +1,12 @@
 package com.example.todoapp.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Todo {
-    private String id;
+    @PrimaryKey(autoGenerate = true)
+    private long id;
     private String title;
     private boolean completed;
 
@@ -14,11 +19,11 @@ public class Todo {
         this.completed = completed;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -36,5 +41,14 @@ public class Todo {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    @Override
+    public String toString() {
+        return "Todo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", completed=" + completed +
+                '}';
     }
 }

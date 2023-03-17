@@ -17,7 +17,7 @@ public class TodoDaoMemory implements TodoDao{
     @Override
     public Todo insert(Todo todo) {
         lastIndex++;
-        todo.setId(lastIndex+"");
+        todo.setId(lastIndex);
         todos.add(todo);
         return todo;
     }
@@ -43,9 +43,9 @@ public class TodoDaoMemory implements TodoDao{
     }
 
     @Override
-    public Todo get(String id) {
+    public Todo get(long id) {
         for(Todo element:todos)
-            if(element.getId().equals(id))
+            if(element.getId() == id)
                 return element;
         return null;
     }

@@ -9,7 +9,7 @@ public interface TodoDao {
     public Todo insert(Todo todo);
     public Todo update(Todo todo);
     public Todo delete(Todo todo);
-    public Todo get(String id);
+    public Todo get(long id);
     public List<Todo> getAll();
 
 }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         mAddTodo.setEnabled(false);
         AddTodo addTodo = new AddTodo(this);
+
+        mTodoInput.setOnClickListener(v -> {
+            System.out.println("salam");
+        });
 
         mTodoInput.addTextChangedListener(addTodo);
         mMyTodos.setOnClickListener(addTodo);

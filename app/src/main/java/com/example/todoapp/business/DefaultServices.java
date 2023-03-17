@@ -27,7 +27,7 @@ public class DefaultServices implements Services{
     }
 
     @Override
-    public Todo searchTodoById(String id) {
+    public Todo searchTodoById(long id) {
         return todoDao.get(id);
     }
 
