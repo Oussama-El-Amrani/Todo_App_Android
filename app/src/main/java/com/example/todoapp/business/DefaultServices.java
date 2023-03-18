@@ -6,21 +6,32 @@ import com.example.todoapp.dao.TodoDao;
 import com.example.todoapp.dao.TodoDaoMemory;
 import com.example.todoapp.model.Todo;
 
-import java.sql.Connection;
 import java.util.List;
 
 public class DefaultServices implements Services{
     private TodoDao todoDao;
     public static DefaultServices instance = null;
+
     public static DefaultServices getInstanceWithMemory() {
         if (instance == null)
             instance = new DefaultServices(new TodoDaoMemory());
         return instance;
     }
 
+    public static DefaultServices getInstance(TodoDao todoDao) {
+        if (instance == null)
+            instance = new DefaultServices(todoDao);
+        return instance;
+    }
     public DefaultServices(TodoDao todoDao) {
         this.todoDao = todoDao;
     }
+
+
+    public void setTodoDao(TodoDao todoDao) {
+        this.todoDao = todoDao;
+    }
+
     @Override
     public Todo addTodo(Todo todo) {
         return todoDao.insert(todo);

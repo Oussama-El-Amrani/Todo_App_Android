@@ -1,10 +1,14 @@
 package com.example.todoapp.model;
 
+import android.os.Parcelable;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Todo {
+public class Todo implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
     private String title;
